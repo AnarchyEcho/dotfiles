@@ -3,3 +3,4 @@
 -- Add any additional options here
 LazyVim.terminal.setup("bash")
 vim.opt.mouse = ""
+vim.opt.wrap = true

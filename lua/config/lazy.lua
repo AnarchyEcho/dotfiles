@@ -23,6 +23,18 @@ require("lazy").setup({
         vim.cmd("colorscheme onedark")
       end,
     },
+    {
+      "nvim-neo-tree/neo-tree.nvim",
+      opts = {
+        filesystem = {
+          filtered_items = {
+            hide_hidden = false,
+            hide_gitignored = false,
+            hide_dotfiles = false,
+          },
+        },
+      },
+    },
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- import/override with your plugins

@@ -32,3 +32,13 @@ Have Bash installed
     ```bash
     cd ~/AppData/Local/nvim
     ```
+
+### Optional
+
+***Untested***
+
+Config URL: [weztermConfig](https://github.com/AnarchyEcho/weztermconfig)
+
+```bash
+scoop install wezterm
+```

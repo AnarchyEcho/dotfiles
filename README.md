@@ -11,19 +11,24 @@ Have Bash installed
 
 1. Install Scoop
 
-  ```ps
-  Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-  Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
-  ```
+    ```ps
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+    Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+    ```
 
-2. Install deps
+2. Install pkgs
 
-  ```bash
-  scoop install fzf gh neovim ripgrep zig
-  ```
+    ```bash
+    scoop bucket add extras
+    scoop bucket add nerd-fonts
+    ```
+
+    ```bash
+    scoop install fzf gh neovim ripgrep zig
+    ```
 
 3. Clone repo in location
 
-  ```bash
-  cd ~/AppData/Local/nvim
-  ```
+    ```bash
+    cd ~/AppData/Local/nvim
+    ```

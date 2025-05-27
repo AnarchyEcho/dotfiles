@@ -7,7 +7,7 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 
 Have Bash installed
 
-## Instructions
+## Windows Instructions
 
 1. Install Scoop
 

@@ -20,11 +20,12 @@ Have Bash installed
 
     ```bash
     scoop bucket add extras
-    scoop bucket add nerd-fonts
     ```
 
     ```bash
-    scoop install fzf gh neovim ripgrep zig
+    scoop install fzf gh neovim ripgrep zig 7zip pwsh wget
+    # prompts admin 2x to install
+    scoop install vcredist2022
     ```
 
 3. Clone repo in location

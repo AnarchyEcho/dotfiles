@@ -31,6 +31,10 @@ require("lazy").setup({
             hide_hidden = false,
             hide_gitignored = false,
             hide_dotfiles = false,
+            never_show = {
+              ".git",
+              ".DS_Store",
+            },
           },
         },
       },

@@ -23,7 +23,7 @@ Have Bash installed
     ```
 
     ```bash
-    scoop install fzf gh neovim ripgrep zig 7zip pwsh wget
+    scoop install fzf gh neovim ripgrep zig 7zip pwsh wget adb scrcpy
     # prompts admin 2x to install
     scoop install vcredist2022
     ```

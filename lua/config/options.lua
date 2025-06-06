@@ -4,3 +4,5 @@
 LazyVim.terminal.setup("bash")
 vim.opt.mouse = ""
 vim.opt.wrap = true
+vim.g.lazyvim_prettier_needs_config = true
+vim.g.lazyvim_eslint_auto_format = true

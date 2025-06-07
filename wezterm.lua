@@ -1,8 +1,12 @@
 local wezterm = require("wezterm")
 
 wezterm.on("gui-startup", function(cmd)
-	local _, _, window = wezterm.mux.spawn_window(cmd or {})
+	local _, pane, window = wezterm.mux.spawn_window(cmd or {})
 	window:gui_window():set_position(0, -5)
+
+	local bottomLeft = pane:split({ direction = "Bottom", size = 0.25 })
+	bottomLeft:split({ direction = "Right", size = 0.5 })
+	pane:activate()
 end)
 
 local config = wezterm.config_builder()

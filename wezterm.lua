@@ -5,7 +5,7 @@ wezterm.on("gui-startup", function(cmd)
 	window:gui_window():set_position(0, -5)
 
 	local bottomLeft = pane:split({ direction = "Bottom", size = 0.25 })
-	bottomLeft:split({ direction = "Right", size = 0.5 })
+	-- bottomLeft:split({ direction = "Right", size = 0.5 })
 	pane:activate()
 end)
 

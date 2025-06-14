@@ -22,7 +22,7 @@ Have Bash installed
    ```bash
    # vcredist2022 prompts admin 2x to install
    scoop install vcredist2022
-   scoop install fzf gh neovim ripgrep zig 7zip pwsh wget adb scrcpy
+   scoop install fzf gh neovim ripgrep zig 7zip pwsh wget adb scrcpy luarocks lazygit imagemagick ghostscript
    ```
 
 3. Clone repo in location

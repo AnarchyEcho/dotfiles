@@ -1,0 +1,17 @@
+[user]
+  name = EchoDev
+  email = anarchytrex@hotmail.com
+
+[core]
+  compression = 9
+  whitespace = error
+  preloadindex = true
+
+[credential]
+  helper = manager-core
+
+[http]
+  sslbackend = openssl
+
+[init]
+  defaultbranch = main

@@ -15,3 +15,11 @@
 
 [init]
   defaultbranch = main
+
+[push]
+  autoSetupRemote = true
+  default = current
+
+[pull]
+  default = current
+  rebase = false

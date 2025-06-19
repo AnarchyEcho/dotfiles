@@ -25,12 +25,9 @@ Have Bash installed
    scoop install fzf gh neovim ripgrep zig 7zip pwsh wget adb scrcpy luarocks lazygit imagemagick ghostscript
    ```
 
-3. Clone repo in location
+3. Create symlink of folder in location
 
    ```bash
-   cd ~/AppData/Local/nvim
+   # Windows
+   ~/AppData/Local/nvim
    ```
-
-### Optional
-
-Config URL: [weztermConfig](https://github.com/AnarchyEcho/weztermconfig)

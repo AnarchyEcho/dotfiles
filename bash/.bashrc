@@ -1,12 +1,24 @@
-source F:/Code_projects/Dotfiles/.env.local
+if [[ $HOSTNAME == "EchoLaptop" ]]; then
+  source C:/Users/anarc/Documents/code_projects/dotfiles/.env.local
+elif [[ $HOSTNAME == "EchoDesktop" ]]; then
+  source F:/Code_projects/Dotfiles/.env.local
+fi
 dotfiles() {
-  cd F:/Code_projects/Dotfiles
+  if [[ $HOSTNAME == "EchoLaptop" ]]; then
+    cd C:/Users/anarc/Documents/code_projects/dotfiles
+  elif [[ $HOSTNAME == "EchoDesktop" ]]; then
+    cd F:/Code_projects/Dotfiles
+  fi
 }
 connectphone() {
   adb connect $PHONEIP
 }
 projects() {
-  cd F:/code_projects
+  if [[ $HOSTNAME == "EchoLaptop" ]]; then
+    cd C:/Users/anarc/Documents/code_projects
+  elif [[ $HOSTNAME == "EchoDesktop" ]]; then
+    cd F:/Code_projects
+  fi
 }
 gpull() {
   git pull

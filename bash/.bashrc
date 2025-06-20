@@ -27,12 +27,6 @@ gcom() {
   git add .
   git commit -m "$@"
 }
-compilehere() {
-  g++ *.cpp -o "$@"
-}
-compileall() {
-  g++ -g $(find . -type f -iregex ".*\.cpp") -o "$@"
-}
 sshpi() {
   ssh $PIIP
 }
@@ -72,7 +66,7 @@ refresh() {
   source ~/.bashrc
 }
 commands() {
-  echo "refresh, dotfiles, connectphone, projects, gcom \"commit\", compileall (C++), compilehere (C++), rfmodules \"npm, yarn, or bun\"(for pkg-lock too), fapi"
+  echo "refresh, dotfiles, connectphone, projects, gcom \"commit\", rfmodules \"npm, yarn, or bun\"(for pkg-lock too), fapi"
 }
 
 alias ls='ls --color=always'

@@ -1,24 +1,37 @@
-if [[ $HOSTNAME == "EchoLaptop" ]]; then
-  source C:/Users/anarc/Documents/code_projects/dotfiles/.env.local
-elif [[ $HOSTNAME == "EchoDesktop" ]]; then
+case "$HOSTNAME" in
+"EchoDesktop")
   source F:/Code_projects/Dotfiles/.env.local
-fi
+  ;;
+"EchoLaptop")
+  source C:/Users/anarc/Documents/code_projects/dotfiles/.env.local
+  ;;
+esac
+
 dotfiles() {
-  if [[ $HOSTNAME == "EchoLaptop" ]]; then
-    cd C:/Users/anarc/Documents/code_projects/dotfiles
-  elif [[ $HOSTNAME == "EchoDesktop" ]]; then
+  case "$HOSTNAME" in
+  "EchoDesktop")
     cd F:/Code_projects/Dotfiles
-  fi
+    ;;
+  "EchoLaptop")
+    cd C:/Users/anarc/Documents/code_projects/dotfiles
+    ;;
+  *)
+    echo "Not implemented for $HOSTNAME"
+    ;;
+  esac
 }
 connectphone() {
   adb connect $PHONEIP
 }
 projects() {
-  if [[ $HOSTNAME == "EchoLaptop" ]]; then
-    cd C:/Users/anarc/Documents/code_projects
-  elif [[ $HOSTNAME == "EchoDesktop" ]]; then
+  case "$HOSTNAME" in
+  "EchoDesktop")
     cd F:/Code_projects
-  fi
+    ;;
+  "EchoLaptop")
+    cd C:/Users/anarc/Documents/code_projects
+    ;;
+  esac
 }
 gpull() {
   git pull
@@ -34,27 +47,45 @@ sshserver() {
   ssh $SERVERIP
 }
 rfmodules() {
-  rm -rf node_modules/
+  rm -rf ./node_modules/
   echo "removed node_modules in $PWD"
-  if [[ "$@" == "npm" ]]; then
-    rm package-lock.json
+
+  case "$@" in
+  "npm")
+    rm ./package-lock.json
     echo "removed package-lock in $PWD"
-  fi
-  if [[ "$@" == "yarn" ]]; then
-    rm yarn.lock
+    ;;
+  "yarn")
+    rm ./yarn.lock
     echo "removed yarn.lock in $PWD"
-  fi
-  if [[ "$@" == "bun" ]]; then
-    rm bun.lockb
+    ;;
+  "bun")
+    rm ./bun.lockb
     echo "removed bun.lockb in $PWD"
-  fi
+    ;;
+  esac
 }
 pyscripts() {
-  py F:/Code_projects/pyScripts/main.py
+  case "$HOSTNAME" in
+  "EchoDesktop")
+    py F:/Code_projects/pyScripts/main.py
+    ;;
+  *)
+    echo "Not implemented for $HOSTNAME"
+    ;;
+  esac
 }
 fapi() {
   trap '' INT
-  bun F:/Code_projects/Games/FAPI/gameplay-planner/bunner.js &
+  case "$HOSTNAME" in
+  "EchoDesktop")
+    bun F:/Code_projects/Games/FAPI/gameplay-planner/bunner.js &
+    ;;
+  *)
+    echo "Not implemented for $HOSTNAME"
+    return
+    ;;
+  esac
   (
     trap - INT
     bun run --cwd="F:/Code_projects/Games/FAPI/gameplay-planner" start

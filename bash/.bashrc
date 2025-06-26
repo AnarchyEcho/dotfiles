@@ -108,11 +108,19 @@ alias l='ls -CF'
 alias vi='nvim'
 alias vim='nvim'
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export DENO_INSTALL="/c/Users/anarc/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
+case "$HOSTNAME" in
+"EchoDesktop")
+  export DENO_INSTALL="/c/Users/anarc/.deno"
+  export PATH="$DENO_INSTALL/bin:$PATH"
+  export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+  ;;
+"EchoLaptop") ;;
+esac
+
 export BUN_INSTALL="$HOME/.bun/bin"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export ANDROID_HOME="$HOME/AppData/Local/Android/Sdk"
+export NDK_HOME="$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
 
 export NVM_DIR="$HOME/.nvm"
 nvm() {

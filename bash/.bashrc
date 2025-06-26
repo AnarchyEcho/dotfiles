@@ -93,6 +93,16 @@ fapi() {
   kill $!
   trap INT
 }
+sdkmanager() {
+  case "$HOSTNAME" in
+  "EchoDesktop")
+    E:/androidSdk/cmdline-tools/latest/bin/sdkmanager.bat
+    ;;
+  *)
+    echo "Not implemented for $HOSTNAME"
+    ;;
+  esac
+}
 refresh() {
   source ~/.bashrc
 }

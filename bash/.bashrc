@@ -96,7 +96,7 @@ fapi() {
 sdkmanager() {
   case "$HOSTNAME" in
   "EchoDesktop")
-    E:/androidSdk/cmdline-tools/latest/bin/sdkmanager.bat
+    E:/androidSdk/cmdline-tools/latest/bin/sdkmanager.bat "$@"
     ;;
   *)
     echo "Not implemented for $HOSTNAME"

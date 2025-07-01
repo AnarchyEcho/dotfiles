@@ -21,10 +21,16 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
   group = vim.api.nvim_create_augroup("eslintOnSave", { clear = true }),
   callback = function(opts)
-    local f = io.open("eslint.config.mjs")
+    local mjs = io.open("eslint.config.mjs")
+    local js = io.open("eslint.config.js")
 
-    if f then
-      f.close(f)
+    if mjs or js then
+      if mjs then
+        mjs.close(mjs)
+      end
+      if js then
+        js.close(js)
+      end
 
       local filetypes = { "typescript", "javascript", "vue" }
       if tableContains(filetypes, vim.bo[opts.buf].filetype) then

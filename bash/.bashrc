@@ -22,6 +22,7 @@ dotfiles() {
 }
 connectphone() {
   adb connect $PHONEIP
+  adb disconnect "adb-R5CW81GXCFA-WpuVh7._adb-tls-connect._tcp"
 }
 projects() {
   case "$HOSTNAME" in

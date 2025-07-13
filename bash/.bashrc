@@ -114,14 +114,17 @@ case "$HOSTNAME" in
   export DENO_INSTALL="/c/Users/anarc/.deno"
   export PATH="$DENO_INSTALL/bin:$PATH"
   export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+  export ANDROID_HOME="E:/Android/Sdk"
+  export NDK_HOME="$ANDROID_HOME/ndk/$(ls --color=never -1 "$ANDROID_HOME/ndk")"
   ;;
-"EchoLaptop") ;;
+"EchoLaptop")
+  export ANDROID_HOME="$HOME/AppData/Local/Android/Sdk"
+  export NDK_HOME="$ANDROID_HOME/ndk/$(ls --color=never -1 "$ANDROID_HOME/ndk")"
+  ;;
 esac
 
 export BUN_INSTALL="$HOME/.bun/bin"
 export PATH="$BUN_INSTALL/bin:$PATH"
-export ANDROID_HOME="$HOME/AppData/Local/Android/Sdk"
-export NDK_HOME="$ANDROID_HOME/ndk/$(ls --color=never -1 "$ANDROID_HOME/ndk")"
 
 export NVM_DIR="$HOME/.nvm"
 nvm() {

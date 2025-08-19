@@ -6,7 +6,7 @@
   compression = 9
   whitespace = error
   preloadindex = true
-  autocrlf = false
+  autocrlf = true
 
 [credential]
   helper = manager-core

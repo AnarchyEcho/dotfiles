@@ -38,7 +38,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
       local filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "vue" }
       if tableContains(filetypes, vim.bo[opts.buf].filetype) then
-        vim.cmd("EslintFixAll")
+        vim.cmd("LspEslintFixAll")
       end
     else
       return

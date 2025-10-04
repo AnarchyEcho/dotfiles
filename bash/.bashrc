@@ -132,4 +132,6 @@ nvm() {
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 }
 
+. "$HOME/.turso/env"
+
 eval "$(starship init bash)"

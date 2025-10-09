@@ -5,6 +5,9 @@ case "$HOSTNAME" in
 "EchoLaptop")
   source C:/Users/anarc/Documents/code_projects/dotfiles/.env.local
   ;;
+"ArchWare")
+  source ~/Documents/dotfiles/.env.local
+  ;;
 esac
 
 dotfiles() {
@@ -14,6 +17,9 @@ dotfiles() {
     ;;
   "EchoLaptop")
     cd C:/Users/anarc/Documents/code_projects/dotfiles
+    ;;
+  "ArchWare")
+    cd ~/Documents/dotfiles/
     ;;
   *)
     echo "Not implemented for $HOSTNAME"
@@ -31,6 +37,9 @@ projects() {
     ;;
   "EchoLaptop")
     cd C:/Users/anarc/Documents/code_projects
+    ;;
+  *)
+    echo "Not implemented for $HOSTNAME"
     ;;
   esac
 }
@@ -116,6 +125,7 @@ case "$HOSTNAME" in
   export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
   export ANDROID_HOME="E:/Android/Sdk"
   export NDK_HOME="$ANDROID_HOME/ndk/$(ls --color=never -1 "$ANDROID_HOME/ndk")"
+  . "$HOME/.turso/env"
   ;;
 "EchoLaptop")
   export ANDROID_HOME="$HOME/AppData/Local/Android/Sdk"
@@ -131,7 +141,5 @@ nvm() {
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 }
-
-. "$HOME/.turso/env"
 
 eval "$(starship init bash)"
